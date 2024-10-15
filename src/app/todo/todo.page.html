@@ -1,13 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>todo</ion-title>
+    <ion-title>Application de TodoList</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Todo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Champ pour ajouter une nouvelle tâche -->
+  <ion-item>
+    <ion-input [(ngModel)]="newTask" placeholder="Ajouter une nouvelle tâche"></ion-input>
+    <ion-button (click)="addTask()" expand="block">Ajouter</ion-button>
+  </ion-item>
+
+    <!-- Liste des tâches -->
+    <ion-list>
+      <ion-item *ngFor="let task of tasks">
+        <ion-label [class.completed]="task.completed">
+          {{ task.title }}
+        </ion-label>
+        <ion-checkbox slot="start" [(ngModel)]="task.completed"></ion-checkbox>
+        <ion-button fill="clear" color="danger" (click)="deleteTask(task.id)">
+          Supprimer
+        </ion-button>
+      </ion-item>
+    </ion-list>
 </ion-content>
