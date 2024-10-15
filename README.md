@@ -16,6 +16,5 @@ Ce projet est une application basique de gestion de tâches (Todo App) développ
 
 ## Installation
 
-1. Clonez le dépôt :
-   ```https://github.com/KaledDev/Ionic-todoApp
+1. Clonez le dépôt : https://github.com/KaledDev/Ionic-todoApp
 
